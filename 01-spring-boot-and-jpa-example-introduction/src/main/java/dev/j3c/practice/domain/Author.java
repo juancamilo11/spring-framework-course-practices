@@ -1,29 +1,32 @@
 package dev.j3c.practice.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
     private String firtName;
     private String lastName;
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books;
 
-    public Author(String firtName, String lastName, Set<Book> books) {
+    public Author() {
+    }
+    public Author(String firtName, String lastName) {
         this.firtName = firtName;
         this.lastName = lastName;
-        this.books = books;
+        this.books = new HashSet<>();
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,10 +72,11 @@ public class Author {
     @Override
     public String toString() {
         return "Author{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", firtName='" + firtName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", books=" + books +
                 '}';
     }
+
 }
