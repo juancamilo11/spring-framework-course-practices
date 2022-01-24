@@ -12,9 +12,12 @@ public class Book {
     private String title;
     private String isbn;
     @ManyToMany
-    @JoinTable(name = "detail_author_book", joinColumns = @JoinColumn(name = "book_id"),
-    inverseJoinColumns = @JoinColumn(name = "author_id"))
-    private Set<Author> authors;
+    @JoinTable(name = "author_books",
+            joinColumns = @JoinColumn(name = "books_id"),
+            inverseJoinColumns = @JoinColumn(name = "author_id"))
+    private Set<Author> authors = new java.util.LinkedHashSet<>();
+    @ManyToOne()
+    private Publisher publisher;
 
     public Book() {
     }
@@ -55,6 +58,14 @@ public class Book {
 
     public void setAuthors(Set<Author> authors) {
         this.authors = authors;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
     @Override

@@ -12,7 +12,7 @@ public class Author {
     private String firtName;
     private String lastName;
     @ManyToMany(mappedBy = "authors")
-    private Set<Book> books;
+    private Set<Book> books = new java.util.LinkedHashSet<>();
 
     public Author() {
     }
