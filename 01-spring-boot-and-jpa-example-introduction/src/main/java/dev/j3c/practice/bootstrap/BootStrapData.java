@@ -5,6 +5,7 @@ import dev.j3c.practice.domain.Book;
 import dev.j3c.practice.domain.Publisher;
 import dev.j3c.practice.repositories.AuthorRepository;
 import dev.j3c.practice.repositories.BookRepository;
+import dev.j3c.practice.repositories.PublisherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -16,11 +17,13 @@ public class BootStrapData implements CommandLineRunner {
 
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
+    private final PublisherRepository publisherRepository;
 
     @Autowired
-    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
+        this.publisherRepository = publisherRepository;
     }
 
     @Override
@@ -45,6 +48,7 @@ public class BootStrapData implements CommandLineRunner {
         this.authorRepository.save(pedro);
         this.bookRepository.save(libro);
         this.bookRepository.save(libro2);
+        this.publisherRepository.save(publisher);
 
     }
 }

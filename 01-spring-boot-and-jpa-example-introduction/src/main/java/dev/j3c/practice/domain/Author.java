@@ -75,7 +75,6 @@ public class Author {
                 "id=" + id +
                 ", firtName='" + firtName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", books=" + books +
                 '}';
     }
 
