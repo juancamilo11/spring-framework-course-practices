@@ -1,4 +1,4 @@
-package dev.j3c.petclinic.model;
+package dev.j3c.model;
 
 public class Person {
     private String firstName;

@@ -1,6 +1,6 @@
-package dev.j3c.petclinic.model;
+package dev.j3c.model;
 
-import dev.j3c.petclinic.model.helpers.PetType;
+import dev.j3c.model.helpers.PetType;
 
 import java.time.LocalDate;
 

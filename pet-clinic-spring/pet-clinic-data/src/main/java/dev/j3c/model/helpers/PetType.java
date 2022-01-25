@@ -1,4 +1,4 @@
-package dev.j3c.petclinic.model.helpers;
+package dev.j3c.model.helpers;
 
 public enum PetType {
 
